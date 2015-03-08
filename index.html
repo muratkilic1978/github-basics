@@ -70,6 +70,26 @@ $(document).ready(function()
 
   });
  });     
+
+ $(document).ready(function()
+{
+    var slider_width = $('.volleyboldSlider').width();//get width automaticly
+  $('#volleyboldSlider-button').click(function() {
+    if($(this).css("margin-left") == slider_width+"px" && !$(this).is(':animated'))
+    {
+        $('.volleyboldSlider,#volleyboldSlider-button').animate({"margin-left": '-='+slider_width});
+    }
+    else
+    {
+        if(!$(this).is(':animated'))//perevent double click to double margin
+        {
+            $('.volleyboldSlider,#volleyboldSlider-button').animate({"margin-left": '+='+slider_width});
+        }
+    }
+
+
+  });
+ });     
 </script>
 <body>
 <div class="konkurrenceSlider"><h4 class="overskrift4">Konkurrence:</h4><p class="sliderText">Vind 2 billetter til Hansi Hinterseer i Danmark eller Tyskland!  Der er ingen grund til, at du skal lade dig begrænse af din alder.</p><form method="post" name="contact-form" class="contact-form">
